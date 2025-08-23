@@ -5,22 +5,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Precision PC – Whitby’s Local PC Experts</title>
+<meta name="description" content="Precision PC in Whitby – 10+ years experience, 200+ satisfied customers. PC repair, builds, upgrades, diagnostics, and tech support. Affordable and mobile.">
+<meta property="og:title" content="Precision PC – Whitby’s Local PC Experts">
+<meta property="og:description" content="PC repair, builds, upgrades, diagnostics, and tech support in Whitby. Mobile and affordable.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/og-image.png">
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body data-theme="light">
 
 <header>
-  <nav>
+  <nav class="navbar">
     <div class="logo" onclick="secretClick()"><a href="index.html">Precision PC</a></div>
-    <div class="nav-links">
+    <div class="nav-links" id="nav-links">
       <a href="index.html">Home</a>
       <a href="pricing.html">Pricing</a>
       <a href="contact.html">Contact</a>
       <a href="settings.html">Settings</a>
     </div>
-    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    <button class="theme-toggle" onclick="toggleTheme()">Theme</button>
+    <button class="hamburger" onclick="toggleNav()">☰</button>
   </nav>
+
   <section class="hero">
     <h1>Precision PC</h1>
     <p>Your trusted local PC experts in Whitby — 10+ years experience, 200+ happy customers.</p>
@@ -29,263 +37,42 @@
 </header>
 
 <main>
-  <section class="about">
-    <h2>About Us</h2>
-    <p>Precision PC is a local, legitimate PC repair, build, and upgrade service. We’re mobile-friendly and affordable, delivering professional service you can trust.</p>
+  <section class="about" role="region" aria-labelledby="about-title">
+    <h2 id="about-title">About Us</h2>
+    <p>Precision PC is a legitimate local business specializing in PC repair, builds, upgrades, diagnostics, and tech support. We offer affordable and reliable services, with mobile visits available in Whitby and surrounding areas.</p>
   </section>
 
-  <section class="services">
-    <h2>Our Services</h2>
+  <section class="services" role="region" aria-labelledby="services-title">
+    <h2 id="services-title">Our Services</h2>
     <div class="cards">
       <div class="card">
-        <img src="images/diagnostics.png" alt="Diagnostics">
+        <img src="images/diagnostics.png" alt="Diagnostics" class="responsive-img">
         <h3>Diagnostics</h3>
-        <p>Fast and accurate PC diagnosis to pinpoint issues.</p>
+        <p>Fast and accurate PC diagnostics to pinpoint issues and recommend solutions.</p>
       </div>
       <div class="card">
-        <img src="images/repair.png" alt="Repair">
+        <img src="images/repair.png" alt="Repair" class="responsive-img">
         <h3>Repair</h3>
-        <p>We fix software, hardware, and performance issues efficiently.</p>
+        <p>Hardware, software, and performance issues fixed efficiently and affordably.</p>
       </div>
       <div class="card">
-        <img src="images/upgrade.png" alt="Upgrade">
+        <img src="images/upgrade.png" alt="Upgrade" class="responsive-img">
         <h3>Upgrade</h3>
-        <p>Improve your PC with high-quality parts and performance tuning.</p>
+        <p>Enhance your PC’s performance with quality parts and expert installation.</p>
       </div>
       <div class="card">
-        <img src="images/build.png" alt="Build">
+        <img src="images/build.png" alt="Custom Build" class="responsive-img">
         <h3>Custom Builds</h3>
-        <p>We build your dream PC tailored to your budget and needs.</p>
+        <p>We build your dream PC tailored to your budget, style, and performance needs.</p>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <p>&copy; 2025 Precision PC | Do it right, do it once</p>
+  <p>&copy; <span id="year"></span> Precision PC | Do it right, do it once</p>
 </footer>
 
 <script src="script.js"></script>
-</body>
-</html>.toggle-btn{position:fixed;top:1rem;right:1rem;padding:0.6rem 1.2rem;border:none;background:var(--accent);color:white;border-radius:8px;cursor:pointer;z-index:1000;transition:0.2s;}
-.toggle-btn:hover{opacity:0.8;}
-@media(max-width:600px){
-  header h1{font-size:2rem;}
-  header p{font-size:1rem;}
-}
-</style>
-</head>
-<body data-theme="light">
-
-<button class="toggle-btn" onclick="toggleTheme()">Toggle Dark/Light</button>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<header>
-  <h1>Precision PC</h1>
-  <p>Whitby & Surrounding | 10+ Years Experience | 200+ Happy Customers</p>
-  <a href="contact.html" class="cta">Book Your Repair</a>
-</header>
-
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card"><h3>Diagnostics & Troubleshooting</h3><p>Fast identification and permanent fixes for any PC problem.</p></div>
-    <div class="card"><h3>Hardware & Software Repair</h3><p>Broken parts, crashes, software issues — solved efficiently.</p></div>
-    <div class="card"><h3>Upgrades & Custom Builds</h3><p>Custom builds and performance boosts that outperform expectations.</p></div>
-    <div class="card"><h3>Tech Support & Setup</h3><p>Software installs, network setup, and ongoing assistance.</p></div>
-    <div class="card"><h3>Mobile Service</h3><p>We come to you for a small fee — Whitby & nearby.</p></div>
-  </div>
-</section>
-
-<section class="cta-section">
-  <h2>Ready to Upgrade or Repair?</h2>
-  <a href="contact.html">Request Service Now</a>
-</section>
-
-<footer>
-  &copy; 2025 Precision PC | Do it right, do it once
-</footer>
-
-<script>
-const cards = document.querySelectorAll('.card');
-function showCards(){
-  const trigger = window.innerHeight / 5 * 4;
-  cards.forEach(card => {
-    const top = card.getBoundingClientRect().top;
-    if(top < trigger){card.classList.add('show');}
-  });
-}
-window.addEventListener('scroll', showCards);
-window.addEventListener('load', showCards);
-
-function toggleTheme(){
-  document.body.dataset.theme = document.body.dataset.theme==='light'?'dark':'light';
-}
-</script>
-</body>
-</html>@media(max-width:500px){header h1{font-size:2rem;}header p{font-size:1rem;}}
-</style>
-</head>
-<body data-theme="light">
-
-<button class="toggle-btn" onclick="toggleTheme()">Toggle Dark/Light</button>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<header>
-  <h1>Precision PC</h1>
-  <p>Whitby & Surrounding | 10+ Years Experience | 200+ Happy Customers</p>
-  <a href="contact.html" class="cta">Book Your Repair</a>
-</header>
-
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card"><h3>Diagnostics & Troubleshooting</h3><p>Fast identification and permanent fixes for any PC problem.</p></div>
-    <div class="card"><h3>Hardware & Software Repair</h3><p>Broken parts, crashes, software issues — solved efficiently.</p></div>
-    <div class="card"><h3>Upgrades & Custom Builds</h3><p>Custom builds and performance boosts that outperform expectations.</p></div>
-    <div class="card"><h3>Tech Support & Setup</h3><p>Software installs, network setup, and ongoing assistance.</p></div>
-    <div class="card"><h3>Mobile Service</h3><p>We come to you for a small fee — Whitby & nearby.</p></div>
-  </div>
-</section>
-
-<section class="cta-section">
-  <h2>Ready to Upgrade or Repair?</h2>
-  <a href="contact.html">Request Service Now</a>
-</section>
-
-<footer>
-  &copy; 2025 Precision PC | Do it right, do it once
-</footer>
-
-<script>
-const cards = document.querySelectorAll('.card');
-function showCards(){
-  const trigger = window.innerHeight / 5 * 4;
-  cards.forEach(card => {
-    const top = card.getBoundingClientRect().top;
-    if(top < trigger){card.classList.add('show');}
-  });
-}
-window.addEventListener('scroll', showCards);
-window.addEventListener('load', showCards);
-
-function toggleTheme(){
-  document.body.dataset.theme = document.body.dataset.theme==='light'?'dark':'light';
-}
-</script>
-
-</body>
-</html>  box-shadow:0 2px 6px rgba(0,0,0,0.1);
-}
-nav a{color:var(--accent); font-weight:bold; text-decoration:none; transition:0.2s;}
-nav a:hover{opacity:0.7;}
-section{padding:4rem 1rem; max-width:1000px;margin:auto;}
-h2{text-align:center;color:var(--accent);margin-bottom:3rem;font-size:2.2rem;}
-.services{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem;}
-.card{background:var(--card); padding:2rem; border-radius:15px;
-box-shadow:0 6px 20px rgba(0,0,0,0.1); text-align:center; transition:0.4s; transform:translateY(0); opacity:0;}
-.card.show{transform:translateY(0); opacity:1;}
-.card h3{margin-bottom:0.8rem;font-size:1.3rem;}
-.cta{text-align:center;margin:4rem 0;}
-.cta a{background:var(--accent); color:white; text-decoration:none;
-padding:1rem 2.5rem; border-radius:8px; font-weight:bold; transition:0.2s;}
-.cta a:hover{opacity:0.85;}
-footer{text-align:center;padding:1rem;font-size:0.9rem;background:var(--card); color:var(--text);}
-.toggle-btn{position:fixed;top:1rem;right:1rem;padding:0.6rem 1.2rem;border:none;
-background:var(--accent); color:white; border-radius:8px; cursor:pointer; z-index:1000; transition:0.2s;}
-.toggle-btn:hover{opacity:0.8;}
-table{width:100%;border-collapse:collapse;margin-top:2rem;}
-th,td{border:1px solid #ccc;padding:0.9rem;text-align:center;}
-th{background:var(--accent);color:white;}
-.hero{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; margin-top:2rem;}
-.hero p{font-size:1.2rem; max-width:700px;}
-.logo{width:120px; margin-bottom:1rem;}
-@media(max-width:500px){header h1{font-size:2rem;} header p{font-size:1rem;}}
-</style>
-</head>
-<body data-theme="light">
-
-<button class="toggle-btn" onclick="toggleTheme()">Toggle Dark/Light</button>
-
-<nav>
-  <a href="#services">Services</a>
-  <a href="#pricing">Pricing</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<header>
-  <!-- Logo Placeholder -->
-  <img class="logo" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IndoaXRlIiByeD0iMjAiLz48dGV4dCB4PSI1MCIgeT0iNTUiIGZvbnQtc2l6ZT0iMTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMwYTg0ZmYiPlBDPC90ZXh0Pjwvc3ZnPg==" alt="Precision PC Logo">
-  <h1>Precision PC</h1>
-  <p>Whitby & Surrounding | 10+ Years Experience | 200+ Satisfied Customers</p>
-  <div class="hero">
-    <p>We’re your local Geek Squad alternative — cheaper, faster, and actually reliable.</p>
-    <a href="#contact">Book Your Repair</a>
-  </div>
-</header>
-
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card"><h3>Diagnostics & Troubleshooting</h3><p>Fast identification and permanent fixes for any PC problem.</p></div>
-    <div class="card"><h3>Hardware & Software Repair</h3><p>Broken parts, crashes, software issues — solved efficiently.</p></div>
-    <div class="card"><h3>Upgrades & Custom Builds</h3><p>Custom builds and performance boosts that outperform expectations.</p></div>
-    <div class="card"><h3>Tech Support & Setup</h3><p>Software installs, network setup, and ongoing assistance.</p></div>
-    <div class="card"><h3>Mobile Service</h3><p>We come to you for a small fee — Whitby & nearby.</p></div>
-  </div>
-</section>
-
-<section id="pricing">
-  <h2>Pricing</h2>
-  <table>
-    <tr><th>Service</th><th>Price (CAD)</th></tr>
-    <tr><td>Diagnostics</td><td>$25</td></tr>
-    <tr><td>Basic Repair / Troubleshooting</td><td>$50</td></tr>
-    <tr><td>Upgrades & Custom Builds</td><td>$60+</td></tr>
-    <tr><td>Mobile Service Fee</td><td>$15 (Whitby & nearby)</td></tr>
-    <tr><td>Extended Support / Consultation</td><td>$30/hr</td></tr>
-  </table>
-  <p style="text-align:center; margin-top:1rem;">Better service than the competition at unbeatable prices.</p>
-</section>
-
-<section id="contact" class="cta">
-  <h2>Get Started Now</h2>
-  <p>Fast, reliable, and affordable PC service. Reach out and lock in your appointment today!</p>
-  <a href="mailto:your-email@example.com">Contact Now</a>
-</section>
-
-<footer>
-  &copy; 2025 Precision PC | Do it right, do it once | Whitby & Surrounding Areas
-</footer>
-
-<script>
-function toggleTheme(){
-  const body=document.body;
-  body.dataset.theme = body.dataset.theme==='light' ? 'dark' : 'light';
-}
-
-// Animate service cards on scroll
-const cards = document.querySelectorAll('.card');
-function showCards(){
-  const trigger = window.innerHeight / 5 * 4;
-  cards.forEach(card => {
-    const top = card.getBoundingClientRect().top;
-    if(top < trigger){card.classList.add('show');}
-  });
-}
-window.addEventListener('scroll', showCards);
-window.addEventListener('load', showCards);
-</script>
-
 </body>
 </html>
