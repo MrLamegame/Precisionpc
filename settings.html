@@ -18,7 +18,6 @@
     <a href="contact.html">Contact</a>
     <a href="settings.html">Settings</a>
   </div>
-  <button class="theme-toggle" onclick="toggleTheme()">Theme</button>
   <button class="hamburger" onclick="toggleNav()">☰</button>
 </nav>
 </header>
@@ -26,7 +25,7 @@
 <main>
 <section class="settings-hero">
   <h1>Website Settings</h1>
-  <p>Customize the look and report issues.</p>
+  <p>Customize your experience and report any issues.</p>
 </section>
 
 <section class="theme-selection">
@@ -38,6 +37,9 @@
     <button class="btn-theme" onclick="setTheme('green')">Green</button>
     <button class="btn-theme" onclick="setTheme('red')">Red</button>
   </div>
+
+  <h3>Or Pick a Custom Color</h3>
+  <input type="color" id="customTheme" onchange="setCustomTheme(this.value)">
 </section>
 
 <section class="bug-report">
