@@ -11,81 +11,86 @@
 <body data-theme="light">
 
 <header>
-<nav class="navbar">
-  <div class="logo" onclick="secretClick()"><a href="index.html">Precision PC</a></div>
-  <div class="nav-links" id="nav-links">
-    <a href="index.html">Home</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="contact.html">Contact</a>
-    <a href="settings.html">Settings</a>
-  </div>
-  <button class="theme-toggle" onclick="toggleTheme()">Theme</button>
-  <button class="hamburger" onclick="toggleNav()">☰</button>
-</nav>
+  <nav class="navbar">
+    <div class="logo" onclick="secretClick()"><a href="index.html">Precision PC</a></div>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+      <a href="settings.html">Settings</a>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()">Theme</button>
+    <button class="hamburger" onclick="toggleNav()">☰</button>
+  </nav>
 </header>
 
 <main>
-<section class="hero">
-  <div class="hero-text">
-    <h1>Precision PC – Whitby's Trusted PC Experts</h1>
-    <p>Diagnose, Repair, Upgrade, or Plan Your PC With a Local Specialist</p>
-    <a href="contact.html" class="btn-primary">Request Service</a>
-    <a href="pricing.html" class="btn-secondary">View Pricing</a>
-  </div>
-  <div class="hero-image">
-    <img src="images/hero-pc.jpg" alt="Professional PC Setup">
-  </div>
-</section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Precision PC – Whitby's Trusted PC Experts</h1>
+      <p>Diagnose, Repair, Upgrade, or Plan Your PC With a Local Specialist</p>
+      <a href="contact.html" class="btn-primary">Request Service</a>
+      <a href="pricing.html" class="btn-secondary">View Pricing</a>
+    </div>
+    <div class="hero-image">
+      <img src="images/hero-pc.jpg" alt="Professional PC Setup">
+    </div>
+  </section>
 
-<section class="services">
-  <h2>Our Services</h2>
-  <div class="cards">
-    <div class="card">
-      <img src="images/repair.png" alt="PC Repair">
-      <h3>PC Repair</h3>
-      <p>Fast, reliable hardware & software fixes for all devices.</p>
+  <!-- Services Section -->
+  <section class="services">
+    <h2>Our Services</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="images/repair.png" alt="PC Repair">
+        <h3>PC Repair</h3>
+        <p>Fast, reliable hardware & software fixes for all devices.</p>
+      </div>
+      <div class="card">
+        <img src="images/upgrades.png" alt="PC Upgrades">
+        <h3>Upgrades</h3>
+        <p>RAM, GPU, SSD, and cooling upgrades to boost performance.</p>
+      </div>
+      <div class="card">
+        <img src="images/build.png" alt="Custom Builds">
+        <h3>Custom Builds</h3>
+        <p>High-quality custom PCs built to your specifications.</p>
+      </div>
+      <div class="card">
+        <img src="images/support.png" alt="Tech Support">
+        <h3>Tech Support</h3>
+        <p>Remote and on-site assistance for any technical issues.</p>
+      </div>
     </div>
-    <div class="card">
-      <img src="images/upgrades.png" alt="PC Upgrades">
-      <h3>Upgrades</h3>
-      <p>RAM, GPU, SSD, and cooling upgrades to boost performance.</p>
-    </div>
-    <div class="card">
-      <img src="images/build.png" alt="Custom Builds">
-      <h3>Custom Builds</h3>
-      <p>High-quality custom PCs built to your specifications.</p>
-    </div>
-    <div class="card">
-      <img src="images/support.png" alt="Tech Support">
-      <h3>Tech Support</h3>
-      <p>Remote and on-site assistance for any technical issues.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="testimonials">
-  <h2>What Our Clients Say</h2>
-  <div class="testimonial-cards">
-    <div class="testimonial">
-      <p>"Fast, affordable, and professional. Best PC service in Whitby!"</p>
-      <strong>- Alex P.</strong>
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-cards">
+      <div class="testimonial">
+        <p>"Fast, affordable, and professional. Best PC service in Whitby!"</p>
+        <strong>- Alex P.</strong>
+      </div>
+      <div class="testimonial">
+        <p>"Matthew helped me build my first gaming rig perfectly."</p>
+        <strong>- Sarah T.</strong>
+      </div>
     </div>
-    <div class="testimonial">
-      <p>"Matthew helped me build my first gaming rig perfectly."</p>
-      <strong>- Sarah T.</strong>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="call-to-action">
-  <h2>Ready to Fix or Upgrade Your PC?</h2>
-  <a href="contact.html" class="btn-primary">Get Started</a>
-</section>
+  <!-- Call to Action -->
+  <section class="call-to-action">
+    <h2>Ready to Fix or Upgrade Your PC?</h2>
+    <a href="contact.html" class="btn-primary">Get Started</a>
+  </section>
+</main>
 
 <footer>
-<div class="footer-content">
-  <p>&copy; <span id="year"></span> Precision PC | Do it right, do it once</p>
-</div>
+  <div class="footer-content">
+    <p>&copy; <span id="year"></span> Precision PC | Do it right, do it once</p>
+  </div>
 </footer>
 
 <script src="script.js"></script>
