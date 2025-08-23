@@ -4,55 +4,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Precision PC – Settings & Bug Report</title>
+<title>Precision PC – Settings</title>
+<link rel="icon" href="images/favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body data-theme="light">
 
-<nav>
+<header>
+<nav class="navbar">
   <div class="logo" onclick="secretClick()"><a href="index.html">Precision PC</a></div>
-  <div class="nav-links">
+  <div class="nav-links" id="nav-links">
     <a href="index.html">Home</a>
     <a href="pricing.html">Pricing</a>
     <a href="contact.html">Contact</a>
     <a href="settings.html">Settings</a>
   </div>
-  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  <button class="theme-toggle" onclick="toggleTheme()">Theme</button>
+  <button class="hamburger" onclick="toggleNav()">☰</button>
 </nav>
+</header>
 
 <main>
-  <section>
-    <h2>Choose Website Theme</h2>
-    <select id="themeSelect" onchange="applyTheme()">
-      <option value="classic">Classic Blue</option>
-      <option value="sunset">Sunset Orange</option>
-      <option value="purple">Purple Teal</option>
-      <option value="steel">Steel Gray</option>
-      <option value="ocean">Ocean Breeze</option>
-      <option value="midnight">Midnight</option>
-    </select>
-  </section>
+<section class="theme-settings" role="region" aria-labelledby="theme-title">
+<h2 id="theme-title">Choose Website Theme</h2>
+<div class="theme-buttons">
+  <button onclick="setTheme('light')">Light</button>
+  <button onclick="setTheme('dark')">Dark</button>
+  <button onclick="setTheme('blue')">Blue</button>
+  <button onclick="setTheme('green')">Green</button>
+  <button onclick="setTheme('red')">Red</button>
+</div>
+</section>
 
-  <section>
-    <h2>Bug Report / Feedback</h2>
-    <form action="https://formspree.io/f/mrmattgardiner@gmail.com" method="POST">
-      <label for="bugName">Name</label>
-      <input type="text" id="bugName" name="name" placeholder="John Doe" required>
+<section class="bug-report" role="region" aria-labelledby="bug-title">
+<h2 id="bug-title">Report a Bug</h2>
+<form id="bugForm">
+  <label for="bugName">Name</label>
+  <input type="text" id="bugName" required>
 
-      <label for="bugContact">Email / Phone</label>
-      <input type="text" id="bugContact" name="contact" placeholder="email@example.com or 555-555-5555" required>
+  <label for="bugEmail">Email or Phone</label>
+  <input type="text" id="bugEmail" required>
 
-      <label for="bugDetails">Describe the Issue / Suggestion</label>
-      <textarea id="bugDetails" name="bug" rows="5" placeholder="Explain what went wrong or your suggestion..." required></textarea>
+  <label for="bugDetails">Bug Description</label>
+  <textarea id="bugDetails" rows="5" required></textarea>
 
-      <button type="submit">Submit Report</button>
-    </form>
-  </section>
+  <button type="submit" class="cta-btn">Submit Bug</button>
+</form>
+<p id="bugStatus"></p>
+</section>
 </main>
 
 <footer>
-  <p>&copy; 2025 Precision PC | Do it right, do it once</p>
+<div class="footer-content">
+  <p>&copy; <span id="year"></span> Precision PC | Do it right, do it once</p>
+</div>
 </footer>
 
 <script src="script.js"></script>
