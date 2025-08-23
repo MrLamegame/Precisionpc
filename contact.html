@@ -6,11 +6,56 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Precision PC – Contact</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#f9f9f9; --text:#111; --accent:#1a73e8; --secondary:#34a853; --card:#fff;
-}
-[data-theme="dark"]{
-  --bg:#121212; --text:#eee; --accent:#1a73e8; --secondary:#34a853; --card:#1e1e1e;
-}
-body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light">
+
+<nav>
+  <div class="logo" onclick="secretClick()"><a href="index.html">Precision PC</a></div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="contact.html">Contact</a>
+    <a href="settings.html">Settings</a>
+  </div>
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+</nav>
+
+<main>
+  <section class="contact">
+    <h2>Request a Service</h2>
+    <p>Fill out the form below and we’ll help plan, diagnose, repair, or upgrade your PC.</p>
+    <form action="https://formspree.io/f/mrmattgardiner@gmail.com" method="POST" class="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="John Doe" required>
+
+      <label for="contact">Email or Phone Number</label>
+      <input type="text" id="contact" name="contact" placeholder="email@example.com or 555-555-5555" required>
+
+      <label for="service">Select Service</label>
+      <select id="service" name="service" onchange="updateHint()">
+        <option value="">-- Choose a service --</option>
+        <option value="Diagnostics">Diagnostics</option>
+        <option value="Repair">Repair</option>
+        <option value="Upgrade">Upgrade</option>
+        <option value="Build">Custom Build</option>
+        <option value="Tech Support">Tech Support</option>
+        <option value="Mobile Service">Mobile Service</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="details">Details / Request</label>
+      <textarea id="details" name="details" placeholder="Describe what you need, your budget, or plan here..." rows="5" required></textarea>
+
+      <button type="submit">Submit Request</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Precision PC | Do it right, do it once</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
