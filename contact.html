@@ -1,20 +1,17 @@
-<!-- File: contact.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Precision PC – Contact</title>
-<meta name="description" content="Contact Precision PC for diagnostics, repair, upgrades, or custom builds in Whitby.">
 <link rel="icon" href="images/favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body data-theme="light">
 
 <header>
 <nav class="navbar">
-  <div class="logo" onclick="secretClick()"><a href="index.html">Precision PC</a></div>
+  <div class="logo"><a href="index.html">Precision PC</a></div>
   <div class="nav-links" id="nav-links">
     <a href="index.html">Home</a>
     <a href="pricing.html">Pricing</a>
@@ -27,31 +24,34 @@
 </header>
 
 <main>
-<section class="contact-form" role="region" aria-labelledby="contact-title">
-<h2 id="contact-title">Request Service / Ask a Question</h2>
-<form id="contactForm">
-  <label for="name">Name</label>
-  <input type="text" id="name" required>
+<section class="contact-hero">
+  <h1>Contact Precision PC</h1>
+  <p>Fill out the form below to request a service or consultation.</p>
+</section>
 
-  <label for="email">Email or Phone</label>
-  <input type="text" id="email" required>
+<section class="contact-form-section">
+  <form id="contactForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-  <label for="service">Select Service</label>
-  <select id="service" required>
-    <option value="" disabled selected>Select one</option>
-    <option value="diagnostics">Diagnostics</option>
-    <option value="repair">Repair</option>
-    <option value="upgrade">Upgrade</option>
-    <option value="build">Custom Build</option>
-    <option value="other">Other</option>
-  </select>
+    <label for="email">Email or Phone:</label>
+    <input type="text" id="email" name="email" placeholder="Email or Phone" required>
 
-  <label for="details">Details / Budget / Requirements</label>
-  <textarea id="details" rows="5" required></textarea>
+    <label for="service">Service Type:</label>
+    <select id="service" name="service" required>
+      <option value="">Select a Service</option>
+      <option value="diagnostics">Diagnostics</option>
+      <option value="repair">Repair</option>
+      <option value="upgrade">Upgrade</option>
+      <option value="custom_build">Custom Build</option>
+      <option value="tech_support">Tech Support</option>
+    </select>
 
-  <button type="submit" class="cta-btn">Send Request</button>
-</form>
-<p id="formStatus"></p>
+    <label for="details">Details:</label>
+    <textarea id="details" name="details" rows="5" placeholder="Explain what you need" required></textarea>
+
+    <button type="submit" class="cta-btn">Submit Request</button>
+  </form>
 </section>
 </main>
 
