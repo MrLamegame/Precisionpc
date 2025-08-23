@@ -1,0 +1,39 @@
+<!-- File: games.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precision PC – Secret Games</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light">
+
+<header>
+<h1 class="center-text">🎮 Secret Game Menu 🎮</h1>
+<nav>
+  <a href="index.html" class="cta-btn">Back to Site</a>
+</nav>
+</header>
+
+<main>
+<section class="game-selection">
+<h2>Select a Game</h2>
+<div class="game-buttons">
+  <button onclick="startFlappy()">Flappy Bird Clone</button>
+  <button onclick="startMario()">Mario-style Platformer</button>
+</div>
+</section>
+
+<section id="gameContainer"></section>
+</main>
+
+<footer>
+<div class="footer-content">
+  <p>&copy; <span id="year"></span> Precision PC | Play responsibly</p>
+</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
