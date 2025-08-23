@@ -4,37 +4,94 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Precision PC – Whitby's Geek Squad Alternative</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f5f5f5; --text:#222; --accent:#0a84ff; --card:#fff;
+  --bg:#f9f9f9; --text:#111; --accent:#1a73e8; --secondary:#34a853; --card:#fff;
 }
 [data-theme="dark"]{
-  --bg:#121212; --text:#eee; --accent:#0a84ff; --card:#1e1e1e;
+  --bg:#121212; --text:#eee; --accent:#1a73e8; --secondary:#34a853; --card:#1e1e1e;
 }
-body{
-  font-family: 'Segoe UI', Arial, sans-serif;
-  margin:0; padding:0;
-  background:var(--bg); color:var(--text);
-  scroll-behavior: smooth;
-  transition: background 0.3s,color 0.3s;
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);scroll-behavior:smooth;}
+nav{position:sticky;top:0;background:var(--card);display:flex;justify-content:center;gap:2rem;padding:1rem;box-shadow:0 2px 6px rgba(0,0,0,0.1);z-index:100;}
+nav a{text-decoration:none;color:var(--accent);font-weight:600;transition:0.2s;}
+nav a:hover{opacity:0.7;}
+header{background:linear-gradient(135deg,#1a73e8,#34a853);color:white;text-align:center;padding:5rem 1rem;position:relative;overflow:hidden;}
+header h1{font-family:'Poppins',sans-serif;font-size:3rem;margin-bottom:0.5rem;}
+header p{font-size:1.2rem;margin-bottom:2rem;}
+header a.cta{background:white;color:var(--accent);padding:1rem 2.5rem;border-radius:10px;font-weight:700;text-decoration:none;transition:0.3s;}
+header a.cta:hover{opacity:0.9;transform:scale(1.05);}
+section{padding:4rem 1rem;max-width:1000px;margin:auto;}
+h2{text-align:center;color:var(--accent);margin-bottom:3rem;font-size:2.2rem;}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;}
+.card{background:var(--card);padding:2rem;border-radius:15px;box-shadow:0 6px 20px rgba(0,0,0,0.1);text-align:center;transition:0.4s;transform:translateY(20px);opacity:0;}
+.card.show{transform:translateY(0);opacity:1;}
+.card h3{margin-bottom:0.8rem;font-family:'Poppins',sans-serif;font-size:1.3rem;color:var(--accent);}
+.cta-section{text-align:center;margin:4rem 0;}
+.cta-section a{background:var(--secondary);color:white;padding:1rem 2.5rem;border-radius:8px;font-weight:700;text-decoration:none;transition:0.3s;}
+.cta-section a:hover{opacity:0.9;transform:scale(1.05);}
+footer{text-align:center;padding:1rem;font-size:0.9rem;background:var(--card);color:var(--text);}
+.toggle-btn{position:fixed;top:1rem;right:1rem;padding:0.6rem 1.2rem;border:none;background:var(--accent);color:white;border-radius:8px;cursor:pointer;z-index:1000;transition:0.2s;}
+.toggle-btn:hover{opacity:0.8;}
+@media(max-width:500px){header h1{font-size:2rem;}header p{font-size:1rem;}}
+</style>
+</head>
+<body data-theme="light">
+
+<button class="toggle-btn" onclick="toggleTheme()">Toggle Dark/Light</button>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<header>
+  <h1>Precision PC</h1>
+  <p>Whitby & Surrounding | 10+ Years Experience | 200+ Happy Customers</p>
+  <a href="contact.html" class="cta">Book Your Repair</a>
+</header>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card"><h3>Diagnostics & Troubleshooting</h3><p>Fast identification and permanent fixes for any PC problem.</p></div>
+    <div class="card"><h3>Hardware & Software Repair</h3><p>Broken parts, crashes, software issues — solved efficiently.</p></div>
+    <div class="card"><h3>Upgrades & Custom Builds</h3><p>Custom builds and performance boosts that outperform expectations.</p></div>
+    <div class="card"><h3>Tech Support & Setup</h3><p>Software installs, network setup, and ongoing assistance.</p></div>
+    <div class="card"><h3>Mobile Service</h3><p>We come to you for a small fee — Whitby & nearby.</p></div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Ready to Upgrade or Repair?</h2>
+  <a href="contact.html">Request Service Now</a>
+</section>
+
+<footer>
+  &copy; 2025 Precision PC | Do it right, do it once
+</footer>
+
+<script>
+const cards = document.querySelectorAll('.card');
+function showCards(){
+  const trigger = window.innerHeight / 5 * 4;
+  cards.forEach(card => {
+    const top = card.getBoundingClientRect().top;
+    if(top < trigger){card.classList.add('show');}
+  });
 }
-header{
-  background:linear-gradient(135deg,#0a84ff,#00d4ff);
-  color:white; text-align:center; padding:5rem 1rem;
-  position:relative;
-  overflow:hidden;
+window.addEventListener('scroll', showCards);
+window.addEventListener('load', showCards);
+
+function toggleTheme(){
+  document.body.dataset.theme = document.body.dataset.theme==='light'?'dark':'light';
 }
-header::before{
-  content:""; position:absolute; top:0; left:0; width:100%; height:100%;
-  background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%);
-  pointer-events:none;
-}
-header h1{margin:0;font-size:3rem;position:relative; z-index:1;}
-header p{margin-top:0.5rem;font-size:1.3rem;position:relative; z-index:1;}
-nav{
-  position:sticky; top:0; background:var(--card);
-  display:flex; justify-content:center; gap:2rem; padding:1rem; z-index:100;
-  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+</script>
+
+</body>
+</html>  box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 nav a{color:var(--accent); font-weight:bold; text-decoration:none; transition:0.2s;}
 nav a:hover{opacity:0.7;}
