@@ -1,0 +1,94 @@
+<!-- File: pricing.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precision PC – Pricing</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f9f9f9; --text:#111; --accent:#1a73e8; --secondary:#34a853; --card:#fff;
+}
+[data-theme="dark"]{
+  --bg:#121212; --text:#eee; --accent:#1a73e8; --secondary:#34a853; --card:#1e1e1e;
+}
+body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);}
+nav{position:sticky;top:0;background:var(--card);display:flex;justify-content:center;gap:2rem;padding:1rem;box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+nav a{text-decoration:none;color:var(--accent);font-weight:600;}
+nav a:hover{opacity:0.7;}
+.toggle-btn{position:fixed;top:1rem;right:1rem;padding:0.6rem 1.2rem;border:none;background:var(--accent);color:white;border-radius:8px;cursor:pointer;z-index:1000;transition:0.2s;}
+.toggle-btn:hover{opacity:0.8;}
+section{padding:4rem 1rem;max-width:1000px;margin:auto;}
+h2{text-align:center;color:var(--accent);margin-bottom:3rem;font-size:2.2rem;}
+table{width:100%;border-collapse:collapse;margin:auto;}
+th,td{border:1px solid #ccc;padding:1rem;text-align:center;}
+th{background:var(--accent);color:white;font-family:'Poppins',sans-serif;}
+td{background:var(--card);}
+tr:hover td{background:rgba(26,115,232,0.1);}
+@media(max-width:700px){table,thead,tbody,tr,th,td{display:block;}th{position:absolute;top:-9999px;left:-9999px;}td{border:none;position:relative;padding-left:50%;margin-bottom:1rem;}td:before{position:absolute;left:15px;top:15px;width:45%;white-space:nowrap;font-weight:bold;content:attr(data-label);}}
+footer{text-align:center;padding:1rem;font-size:0.9rem;background:var(--card);color:var(--text);}
+</style>
+</head>
+<body data-theme="light">
+
+<button class="toggle-btn" onclick="toggleTheme()">Toggle Dark/Light</button>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<section>
+  <h2>Pricing & Packages</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Service</th>
+        <th>Standard</th>
+        <th>Premium</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Service">Diagnostics & Troubleshooting</td>
+        <td data-label="Standard">$25</td>
+        <td data-label="Premium">$40 (priority)</td>
+      </tr>
+      <tr>
+        <td data-label="Service">Hardware Repair</td>
+        <td data-label="Standard">$50</td>
+        <td data-label="Premium">$80 (includes parts check)</td>
+      </tr>
+      <tr>
+        <td data-label="Service">Software Repair/Setup</td>
+        <td data-label="Standard">$35</td>
+        <td data-label="Premium">$60 (includes optimization)</td>
+      </tr>
+      <tr>
+        <td data-label="Service">Custom Builds & Upgrades</td>
+        <td data-label="Standard">$75</td>
+        <td data-label="Premium">$120 (full assembly + testing)</td>
+      </tr>
+      <tr>
+        <td data-label="Service">Mobile Service</td>
+        <td data-label="Standard">$15 extra</td>
+        <td data-label="Premium">$15 extra</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<footer>
+  &copy; 2025 Precision PC | Do it right, do it once
+</footer>
+
+<script>
+function toggleTheme(){
+  document.body.dataset.theme = document.body.dataset.theme==='light'?'dark':'light';
+}
+</script>
+
+</body>
+</html>
