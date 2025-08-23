@@ -6,71 +6,89 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Precision PC – Whitby’s Local PC Experts</title>
 <meta name="description" content="Precision PC in Whitby – 10+ years experience, 200+ satisfied customers. PC repair, builds, upgrades, diagnostics, and tech support. Affordable and mobile.">
-<meta property="og:title" content="Precision PC – Whitby’s Local PC Experts">
-<meta property="og:description" content="PC repair, builds, upgrades, diagnostics, and tech support in Whitby. Mobile and affordable.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="images/og-image.png">
-<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="images/favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body data-theme="light">
 
 <header>
-  <nav class="navbar">
-    <div class="logo" onclick="secretClick()"><a href="index.html">Precision PC</a></div>
-    <div class="nav-links" id="nav-links">
-      <a href="index.html">Home</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="contact.html">Contact</a>
-      <a href="settings.html">Settings</a>
-    </div>
-    <button class="theme-toggle" onclick="toggleTheme()">Theme</button>
-    <button class="hamburger" onclick="toggleNav()">☰</button>
-  </nav>
+<nav class="navbar">
+  <div class="logo" onclick="secretClick()"><a href="index.html">Precision PC</a></div>
+  <div class="nav-links" id="nav-links">
+    <a href="index.html">Home</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="contact.html">Contact</a>
+    <a href="settings.html">Settings</a>
+  </div>
+  <button class="theme-toggle" onclick="toggleTheme()">Theme</button>
+  <button class="hamburger" onclick="toggleNav()">☰</button>
+</nav>
 
-  <section class="hero">
+<section class="hero">
+  <div class="hero-content">
     <h1>Precision PC</h1>
     <p>Your trusted local PC experts in Whitby — 10+ years experience, 200+ happy customers.</p>
     <a href="contact.html" class="cta-btn">Request Service</a>
-  </section>
+  </div>
+  <div class="hero-image">
+    <img src="images/hero-pc.png" alt="PC repair">
+  </div>
+</section>
 </header>
 
 <main>
-  <section class="about" role="region" aria-labelledby="about-title">
-    <h2 id="about-title">About Us</h2>
-    <p>Precision PC is a legitimate local business specializing in PC repair, builds, upgrades, diagnostics, and tech support. We offer affordable and reliable services, with mobile visits available in Whitby and surrounding areas.</p>
-  </section>
+<section class="about" role="region" aria-labelledby="about-title">
+<h2 id="about-title">About Us</h2>
+<p>Precision PC is a legitimate local business specializing in PC repair, builds, upgrades, diagnostics, and tech support. We offer affordable and reliable services, with mobile visits available in Whitby and surrounding areas.</p>
+</section>
 
-  <section class="services" role="region" aria-labelledby="services-title">
-    <h2 id="services-title">Our Services</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="images/diagnostics.png" alt="Diagnostics" class="responsive-img">
-        <h3>Diagnostics</h3>
-        <p>Fast and accurate PC diagnostics to pinpoint issues and recommend solutions.</p>
-      </div>
-      <div class="card">
-        <img src="images/repair.png" alt="Repair" class="responsive-img">
-        <h3>Repair</h3>
-        <p>Hardware, software, and performance issues fixed efficiently and affordably.</p>
-      </div>
-      <div class="card">
-        <img src="images/upgrade.png" alt="Upgrade" class="responsive-img">
-        <h3>Upgrade</h3>
-        <p>Enhance your PC’s performance with quality parts and expert installation.</p>
-      </div>
-      <div class="card">
-        <img src="images/build.png" alt="Custom Build" class="responsive-img">
-        <h3>Custom Builds</h3>
-        <p>We build your dream PC tailored to your budget, style, and performance needs.</p>
-      </div>
-    </div>
-  </section>
+<section class="services" role="region" aria-labelledby="services-title">
+<h2 id="services-title">Our Services</h2>
+<div class="cards">
+  <div class="card">
+    <img src="images/diagnostics.png" alt="Diagnostics" class="responsive-img">
+    <h3>Diagnostics</h3>
+    <p>Fast and accurate PC diagnostics to pinpoint issues and recommend solutions.</p>
+  </div>
+  <div class="card">
+    <img src="images/repair.png" alt="Repair" class="responsive-img">
+    <h3>Repair</h3>
+    <p>Hardware, software, and performance issues fixed efficiently and affordably.</p>
+  </div>
+  <div class="card">
+    <img src="images/upgrade.png" alt="Upgrade" class="responsive-img">
+    <h3>Upgrade</h3>
+    <p>Enhance your PC’s performance with quality parts and expert installation.</p>
+  </div>
+  <div class="card">
+    <img src="images/build.png" alt="Custom Build" class="responsive-img">
+    <h3>Custom Builds</h3>
+    <p>We build your dream PC tailored to your budget, style, and performance needs.</p>
+  </div>
+</div>
+</section>
+
+<section class="testimonials" role="region" aria-labelledby="testimonials-title">
+<h2 id="testimonials-title">Customer Reviews</h2>
+<div class="testimonial-cards">
+  <div class="testimonial">
+    <p>"Precision PC fixed my old computer in no time and for a great price!"</p>
+    <span>- Sophie L.</span>
+  </div>
+  <div class="testimonial">
+    <p>"Fast, reliable, and honest service. Highly recommend!"</p>
+    <span>- Dan M.</span>
+  </div>
+</div>
+</section>
 </main>
 
 <footer>
+<div class="footer-content">
   <p>&copy; <span id="year"></span> Precision PC | Do it right, do it once</p>
+  <p><a href="contact.html">Contact Us</a> | <a href="settings.html">Settings</a></p>
+</div>
 </footer>
 
 <script src="script.js"></script>
