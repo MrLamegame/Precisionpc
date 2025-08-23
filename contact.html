@@ -5,55 +5,60 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Precision PC – Contact</title>
+<meta name="description" content="Contact Precision PC for diagnostics, repair, upgrades, or custom builds in Whitby.">
+<link rel="icon" href="images/favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body data-theme="light">
 
-<nav>
+<header>
+<nav class="navbar">
   <div class="logo" onclick="secretClick()"><a href="index.html">Precision PC</a></div>
-  <div class="nav-links">
+  <div class="nav-links" id="nav-links">
     <a href="index.html">Home</a>
     <a href="pricing.html">Pricing</a>
     <a href="contact.html">Contact</a>
     <a href="settings.html">Settings</a>
   </div>
-  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  <button class="theme-toggle" onclick="toggleTheme()">Theme</button>
+  <button class="hamburger" onclick="toggleNav()">☰</button>
 </nav>
+</header>
 
 <main>
-  <section class="contact">
-    <h2>Request a Service</h2>
-    <p>Fill out the form below and we’ll help plan, diagnose, repair, or upgrade your PC.</p>
-    <form action="https://formspree.io/f/mrmattgardiner@gmail.com" method="POST" class="contact-form">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" placeholder="John Doe" required>
+<section class="contact-form" role="region" aria-labelledby="contact-title">
+<h2 id="contact-title">Request Service / Ask a Question</h2>
+<form id="contactForm">
+  <label for="name">Name</label>
+  <input type="text" id="name" required>
 
-      <label for="contact">Email or Phone Number</label>
-      <input type="text" id="contact" name="contact" placeholder="email@example.com or 555-555-5555" required>
+  <label for="email">Email or Phone</label>
+  <input type="text" id="email" required>
 
-      <label for="service">Select Service</label>
-      <select id="service" name="service" onchange="updateHint()">
-        <option value="">-- Choose a service --</option>
-        <option value="Diagnostics">Diagnostics</option>
-        <option value="Repair">Repair</option>
-        <option value="Upgrade">Upgrade</option>
-        <option value="Build">Custom Build</option>
-        <option value="Tech Support">Tech Support</option>
-        <option value="Mobile Service">Mobile Service</option>
-        <option value="Other">Other</option>
-      </select>
+  <label for="service">Select Service</label>
+  <select id="service" required>
+    <option value="" disabled selected>Select one</option>
+    <option value="diagnostics">Diagnostics</option>
+    <option value="repair">Repair</option>
+    <option value="upgrade">Upgrade</option>
+    <option value="build">Custom Build</option>
+    <option value="other">Other</option>
+  </select>
 
-      <label for="details">Details / Request</label>
-      <textarea id="details" name="details" placeholder="Describe what you need, your budget, or plan here..." rows="5" required></textarea>
+  <label for="details">Details / Budget / Requirements</label>
+  <textarea id="details" rows="5" required></textarea>
 
-      <button type="submit">Submit Request</button>
-    </form>
-  </section>
+  <button type="submit" class="cta-btn">Send Request</button>
+</form>
+<p id="formStatus"></p>
+</section>
 </main>
 
 <footer>
-  <p>&copy; 2025 Precision PC | Do it right, do it once</p>
+<div class="footer-content">
+  <p>&copy; <span id="year"></span> Precision PC | Do it right, do it once</p>
+</div>
 </footer>
 
 <script src="script.js"></script>
