@@ -4,37 +4,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Precision PC – Whitby's Pro PC Service</title>
+<title>Precision PC – Whitby’s Local PC Experts</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#f9f9f9; --text:#111; --accent:#1a73e8; --secondary:#34a853; --card:#fff;
-}
-[data-theme="dark"]{
-  --bg:#121212; --text:#eee; --accent:#1a73e8; --secondary:#34a853; --card:#1e1e1e;
-}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);scroll-behavior:smooth;}
-nav{position:sticky;top:0;background:var(--card);display:flex;justify-content:center;gap:2rem;padding:1rem;box-shadow:0 2px 6px rgba(0,0,0,0.1);z-index:100;}
-nav a{text-decoration:none;color:var(--accent);font-weight:600;transition:0.2s;}
-nav a:hover{opacity:0.7;}
-header{background:linear-gradient(135deg,#1a73e8,#34a853);color:white;text-align:center;padding:5rem 1rem;position:relative;overflow:hidden;}
-header h1{font-family:'Poppins',sans-serif;font-size:3rem;margin-bottom:0.5rem;}
-header p{font-size:1.2rem;margin-bottom:2rem;max-width:700px;margin-left:auto;margin-right:auto;}
-header a.cta{background:white;color:var(--accent);padding:1rem 2.5rem;border-radius:10px;font-weight:700;text-decoration:none;transition:0.3s;display:inline-block;}
-header a.cta:hover{opacity:0.9;transform:scale(1.05);}
-section{padding:4rem 1rem;max-width:1000px;margin:auto;}
-h2{text-align:center;color:var(--accent);margin-bottom:3rem;font-size:2.2rem;}
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;}
-.card{background:var(--card);padding:2rem;border-radius:15px;box-shadow:0 6px 20px rgba(0,0,0,0.1);text-align:center;transition:0.4s;transform:translateY(20px);opacity:0;}
-.card.show{transform:translateY(0);opacity:1;}
-.card h3{margin-bottom:0.8rem;font-family:'Poppins',sans-serif;font-size:1.3rem;color:var(--accent);}
-.card p{font-size:1rem;line-height:1.5;}
-.cta-section{text-align:center;margin:4rem 0;}
-.cta-section a{background:var(--secondary);color:white;padding:1rem 2.5rem;border-radius:8px;font-weight:700;text-decoration:none;transition:0.3s;display:inline-block;}
-.cta-section a:hover{opacity:0.9;transform:scale(1.05);}
-footer{text-align:center;padding:1rem;font-size:0.9rem;background:var(--card);color:var(--text);}
-.toggle-btn{position:fixed;top:1rem;right:1rem;padding:0.6rem 1.2rem;border:none;background:var(--accent);color:white;border-radius:8px;cursor:pointer;z-index:1000;transition:0.2s;}
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-theme="light">
+
+<header>
+  <nav>
+    <div class="logo" onclick="secretClick()"><a href="index.html">Precision PC</a></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+      <a href="settings.html">Settings</a>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  </nav>
+  <section class="hero">
+    <h1>Precision PC</h1>
+    <p>Your trusted local PC experts in Whitby — 10+ years experience, 200+ happy customers.</p>
+    <a href="contact.html" class="cta-btn">Request Service</a>
+  </section>
+</header>
+
+<main>
+  <section class="about">
+    <h2>About Us</h2>
+    <p>Precision PC is a local, legitimate PC repair, build, and upgrade service. We’re mobile-friendly and affordable, delivering professional service you can trust.</p>
+  </section>
+
+  <section class="services">
+    <h2>Our Services</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="images/diagnostics.png" alt="Diagnostics">
+        <h3>Diagnostics</h3>
+        <p>Fast and accurate PC diagnosis to pinpoint issues.</p>
+      </div>
+      <div class="card">
+        <img src="images/repair.png" alt="Repair">
+        <h3>Repair</h3>
+        <p>We fix software, hardware, and performance issues efficiently.</p>
+      </div>
+      <div class="card">
+        <img src="images/upgrade.png" alt="Upgrade">
+        <h3>Upgrade</h3>
+        <p>Improve your PC with high-quality parts and performance tuning.</p>
+      </div>
+      <div class="card">
+        <img src="images/build.png" alt="Build">
+        <h3>Custom Builds</h3>
+        <p>We build your dream PC tailored to your budget and needs.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Precision PC | Do it right, do it once</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>.toggle-btn{position:fixed;top:1rem;right:1rem;padding:0.6rem 1.2rem;border:none;background:var(--accent);color:white;border-radius:8px;cursor:pointer;z-index:1000;transition:0.2s;}
 .toggle-btn:hover{opacity:0.8;}
 @media(max-width:600px){
   header h1{font-size:2rem;}
