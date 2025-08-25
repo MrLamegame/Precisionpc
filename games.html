@@ -1,53 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Precision PC – Games</title>
-<link rel="icon" href="images/favicon.ico">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Games — Precision PC</title>
+  <link rel="icon" href="images/favicon.ico"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <script defer src="script.js"></script>
 </head>
-<body data-theme="light">
-
-<header>
-<nav class="navbar">
-  <div class="logo"><a href="index.html">Precision PC</a></div>
-  <div class="nav-links" id="nav-links">
+<body>
+<header class="navbar">
+  <a class="logo" href="index.html">Precision PC</a>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleNav()">☰</button>
+  <nav id="site-nav" class="nav">
     <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
     <a href="pricing.html">Pricing</a>
     <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
     <a href="settings.html">Settings</a>
-  </div>
-  <button class="theme-toggle" onclick="toggleTheme()">Theme</button>
-  <button class="hamburger" onclick="toggleNav()">☰</button>
-</nav>
+  </nav>
 </header>
 
-<main>
-<section class="games-hero">
-  <h1>Secret Games Menu</h1>
-  <p>Enjoy our fun games while browsing!</p>
-</section>
+<main class="page">
+  <section class="page-hero section-inview">
+    <h1>Mini-Games</h1>
+    <p>Just for fun while you browse.</p>
+  </section>
 
-<section class="game-selection">
-  <h2>Choose a Game</h2>
-  <div class="game-buttons">
-    <button onclick="loadFlappy()">Flappy Bird</button>
-    <button onclick="loadMario()">Mario Adventure</button>
-  </div>
-</section>
+  <section class="game-picker section-inview">
+    <button class="btn btn--primary" onclick="loadFlappy()">Play Flappy</button>
+    <button class="btn btn--ghost" onclick="loadPlatform()">Play Platformer</button>
+  </section>
 
-<section id="game-container">
-  <!-- Game will load here -->
-</section>
+  <section id="game-container" class="game-container section-inview" aria-live="polite"></section>
 </main>
 
-<footer>
-<div class="footer-content">
-<p>&copy; <span id="year"></span> Precision PC | Do it right, do it once</p>
-</div>
+<footer class="footer">
+  <p>© <span id="year"></span> Precision PC</p>
 </footer>
-
-<script src="script.js"></script>
 </body>
 </html>
