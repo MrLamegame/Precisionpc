@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Services — Precision PC</title>
+  <link rel="icon" href="images/favicon.ico"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <script defer src="script.js"></script>
+</head>
+<body>
+<header class="navbar">
+  <a class="logo" href="index.html">Precision PC</a>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleNav()">☰</button>
+  <nav id="site-nav" class="nav">
+    <a href="index.html">Home</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <a href="settings.html">Settings</a>
+  </nav>
+</header>
 
+<main class="page">
+  <section class="page-hero section-inview">
+    <h1>Everything your PC needs</h1>
+    <p>From a simple cleanup to a full custom build — I’ve got you covered.</p>
+  </section>
+
+  <section class="service-sections">
+    <article id="repairs" class="service-block section-inview">
+      <h2>Repairs</h2>
+      <p>PSU, GPU, motherboard, Windows issues, data rescue — done with care, tested under load.</p>
+    </article>
+
+    <article id="upgrades" class="service-block section-inview">
+      <h2>Upgrades</h2>
+      <p>SSD swaps, RAM kits, GPU installs, airflow & thermal improvements that actually help.</p>
+    </article>
+
+    <article id="builds" class="service-block section-inview">
+      <h2>Custom Builds</h2>
+      <p>Performance matched to your games/apps — cable-managed and bench-tested.</p>
+    </article>
+
+    <article id="support" class="service-block section-inview">
+      <h2>Support & Setup</h2>
+      <p>Remote help, driver cleanup, backups, and OS reinstall with your apps restored.</p>
+    </article>
+  </section>
+
+  <section class="cta section-inview">
+    <h2>Not sure what to choose?</h2>
+    <p>Tell me your budget and what you do — I’ll propose the best plan.</p>
+    <a class="btn btn--primary" href="contact.html">Get a plan</a>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Precision PC</p>
+</footer>
+</body>
+</html>
