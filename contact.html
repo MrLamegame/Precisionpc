@@ -1,61 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Precision PC – Contact</title>
-<link rel="icon" href="images/favicon.ico">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Contact — Precision PC</title>
+  <link rel="icon" href="images/favicon.ico"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <script defer src="script.js"></script>
 </head>
-<body data-theme="light">
-<header>
-<nav class="navbar">
-  <div class="logo"><a href="index.html">Precision PC</a></div>
-  <div class="nav-links" id="nav-links">
+<body>
+<header class="navbar">
+  <a class="logo" href="index.html">Precision PC</a>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleNav()">☰</button>
+  <nav id="site-nav" class="nav">
     <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
     <a href="pricing.html">Pricing</a>
-    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="about.html">About</a>
     <a href="settings.html">Settings</a>
-  </div>
-  <button class="theme-toggle" onclick="toggleTheme()">Theme</button>
-  <button class="hamburger" onclick="toggleNav()">☰</button>
-</nav>
+  </nav>
 </header>
-<main>
-<section class="contact-hero">
-  <h1>Contact Precision PC</h1>
-  <p>Fill out the form to request service or report an issue.</p>
-</section>
-<section class="contact-form-section">
-  <form id="contactForm">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" placeholder="Your Name" required>
 
-    <label for="email">Email or Phone:</label>
-    <input type="text" id="email" name="email" placeholder="Email or Phone" required>
+<main class="page">
+  <section class="page-hero section-inview">
+    <h1>Request a service</h1>
+    <p>Tell me what you need — I’ll reply fast with next steps.</p>
+  </section>
 
-    <label for="service">Service Type:</label>
-    <select id="service" name="service" required>
-      <option value="">Select a Service</option>
-      <option value="diagnostics">Diagnostics</option>
-      <option value="repair">Repair</option>
-      <option value="upgrade">Upgrade</option>
-      <option value="custom_build">Custom Build</option>
-      <option value="tech_support">Tech Support</option>
-    </select>
+  <section class="form-wrap section-inview">
+    <form id="contactForm" class="form" autocomplete="on">
+      <div class="field">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" placeholder="Jane Doe" required />
+      </div>
 
-    <label for="details">Details:</label>
-    <textarea id="details" name="details" rows="5" placeholder="Explain what you need" required></textarea>
+      <div class="field">
+        <label for="contact">Email or phone</label>
+        <input id="contact" name="contact" type="text" inputmode="email" placeholder="you@email.com or 555-123-4567" required />
+      </div>
 
-    <button type="submit" class="btn-primary">Submit Request</button>
-  </form>
-</section>
+      <div class="field">
+        <label for="service">Service</label>
+        <select id="service" name="service" required>
+          <option value="">Choose…</option>
+          <option>Diagnostics</option>
+          <option>Repair</option>
+          <option>Upgrade</option>
+          <option>Custom Build</option>
+          <option>Tech Support</option>
+          <option>Mobile Visit</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="budget">Budget (optional)</label>
+        <input id="budget" name="budget" type="text" placeholder="$300 for upgrades, etc." />
+      </div>
+
+      <div class="field">
+        <label for="details">Details</label>
+        <textarea id="details" name="details" rows="6" placeholder="What’s going on, or what you want built?" required></textarea>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn--primary" type="submit">Send request</button>
+        <p class="form-note">No spam. I’ll only use this to contact you back.</p>
+      </div>
+    </form>
+  </section>
 </main>
-<footer>
-<div class="footer-content">
-<p>&copy; <span id="year"></span> Precision PC | Do it right, do it once</p>
-</div>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Precision PC</p>
 </footer>
-<script src="script.js"></script>
 </body>
 </html>
