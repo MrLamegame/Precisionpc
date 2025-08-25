@@ -1,57 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Precision PC – Pricing</title>
-<link rel="icon" href="images/favicon.ico">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Pricing — Precision PC</title>
+  <link rel="icon" href="images/favicon.ico"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <script defer src="script.js"></script>
 </head>
-<body data-theme="light">
-<header>
-  <nav class="navbar">
-    <div class="logo"><a href="index.html">Precision PC</a></div>
-    <div class="nav-links" id="nav-links">
-      <a href="index.html">Home</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="contact.html">Contact</a>
-      <a href="settings.html">Settings</a>
-    </div>
-    <button class="theme-toggle" onclick="toggleTheme()">Theme</button>
-    <button class="hamburger" onclick="toggleNav()">☰</button>
+<body>
+<header class="navbar">
+  <a class="logo" href="index.html">Precision PC</a>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleNav()">☰</button>
+  <nav id="site-nav" class="nav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="pricing.html" class="active">Pricing</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <a href="settings.html">Settings</a>
   </nav>
 </header>
-<main>
-<section class="pricing-hero">
-  <h1>Our Packages</h1>
-  <p>Affordable pricing for every budget.</p>
-</section>
-<section class="pricing-cards">
-  <div class="cards">
-    <div class="card">
+
+<main class="page">
+  <section class="page-hero section-inview">
+    <h1>Transparent, wallet-friendly pricing</h1>
+    <p>No surprises. Fair rates. Work that actually fixes the problem.</p>
+  </section>
+
+  <section class="pricing-cards section-inview">
+    <article class="price-card">
       <h3>Diagnostics</h3>
-      <p>$25 – Complete hardware & software diagnosis.</p>
-    </div>
-    <div class="card">
-      <h3>Repair</h3>
-      <p>$50+ – Hardware & software repairs starting price.</p>
-    </div>
-    <div class="card">
+      <p class="price">$25</p>
+      <p>Applied to any repair you proceed with.</p>
+    </article>
+
+    <article class="price-card">
+      <h3>Repairs</h3>
+      <p class="price">$50+</p>
+      <p>Labour based on complexity. Parts at fair market cost.</p>
+    </article>
+
+    <article class="price-card">
       <h3>Upgrades</h3>
-      <p>$30+ – RAM, GPU, SSD, cooling, and more.</p>
-    </div>
-    <div class="card">
-      <h3>Custom Builds</h3>
-      <p>$200+ – Complete custom PC builds with expert guidance.</p>
-    </div>
-  </div>
-</section>
+      <p class="price">$30+</p>
+      <p>Install & configure SSD, RAM, GPU, fans, BIOS updates, cleanup.</p>
+    </article>
+
+    <article class="price-card featured">
+      <h3>Custom PC Build</h3>
+      <p class="price">$100–$120</p>
+      <p>Assemble, cable-manage, install OS & drivers, stress-test.</p>
+    </article>
+
+    <article class="price-card">
+      <h3>Mobile Visit</h3>
+      <p class="price">$15–$35</p>
+      <p>Whitby & nearby. Exact cost depends on distance/time.</p>
+    </article>
+  </section>
+
+  <section class="cta section-inview">
+    <h2>Have a budget?</h2>
+    <p>I’ll propose the best parts or repair path for your price range.</p>
+    <a class="btn btn--primary" href="contact.html">Plan my build</a>
+  </section>
 </main>
-<footer>
-  <div class="footer-content">
-    <p>&copy; <span id="year"></span> Precision PC | Do it right, do it once</p>
-  </div>
+
+<footer class="footer">
+  <p>© <span id="year"></span> Precision PC</p>
 </footer>
-<script src="script.js"></script>
 </body>
 </html>
