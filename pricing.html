@@ -1,74 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Pricing — Precision PC</title>
-  <link rel="icon" href="images/favicon.ico"/>
-  <link rel="stylesheet" href="styles.css"/>
-  <script defer src="script.js"></script>
-</head>
-<body>
-<header class="navbar">
-  <a class="logo" href="index.html">Precision PC</a>
-  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleNav()">☰</button>
-  <nav id="site-nav" class="nav">
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="pricing.html" class="active">Pricing</a>
-    <a href="contact.html">Contact</a>
-    <a href="about.html">About</a>
-    <a href="settings.html">Settings</a>
-  </nav>
-</header>
-
-<main class="page">
-  <section class="page-hero section-inview">
-    <h1>Transparent, wallet-friendly pricing</h1>
-    <p>No surprises. Fair rates. Work that actually fixes the problem.</p>
-  </section>
-
-  <section class="pricing-cards section-inview">
-    <article class="price-card">
-      <h3>Diagnostics</h3>
-      <p class="price">$25</p>
-      <p>Applied to any repair you proceed with.</p>
-    </article>
-
-    <article class="price-card">
-      <h3>Repairs</h3>
-      <p class="price">$50+</p>
-      <p>Labour based on complexity. Parts at fair market cost.</p>
-    </article>
-
-    <article class="price-card">
-      <h3>Upgrades</h3>
-      <p class="price">$30+</p>
-      <p>Install & configure SSD, RAM, GPU, fans, BIOS updates, cleanup.</p>
-    </article>
-
-    <article class="price-card featured">
-      <h3>Custom PC Build</h3>
-      <p class="price">$100–$120</p>
-      <p>Assemble, cable-manage, install OS & drivers, stress-test.</p>
-    </article>
-
-    <article class="price-card">
-      <h3>Mobile Visit</h3>
-      <p class="price">$15–$35</p>
-      <p>Whitby & nearby. Exact cost depends on distance/time.</p>
-    </article>
-  </section>
-
-  <section class="cta section-inview">
-    <h2>Have a budget?</h2>
-    <p>I’ll propose the best parts or repair path for your price range.</p>
-    <a class="btn btn--primary" href="contact.html">Plan my build</a>
-  </section>
-</main>
-
-<footer class="footer">
-  <p>© <span id="year"></span> Precision PC</p>
-</footer>
-</body>
-</html>
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/pricing.html b/pricing.html
+index 0d2c0de46688bce228994fafbf276f98dc43b3b8..3c4410e9c81a11b627dc7b139b5e7f801cc3027f 100644
+--- a/pricing.html
++++ b/pricing.html
+@@ -1,43 +1,44 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="utf-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+-  <title>Pricing — Precision PC</title>
++  <title>Pricing — Precision IT</title>
+   <link rel="icon" href="images/favicon.ico"/>
+   <link rel="stylesheet" href="styles.css"/>
+   <script defer src="script.js"></script>
+ </head>
+ <body>
+ <header class="navbar">
+-  <a class="logo" href="index.html">Precision PC</a>
++  <a class="logo" href="index.html">Precision IT</a>
+   <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleNav()">☰</button>
+   <nav id="site-nav" class="nav">
+     <a href="index.html">Home</a>
+     <a href="services.html">Services</a>
+     <a href="pricing.html" class="active">Pricing</a>
++    <a href="gaming-pcs.html">Plug & Play PCs</a>
+     <a href="contact.html">Contact</a>
+     <a href="about.html">About</a>
+     <a href="settings.html">Settings</a>
+   </nav>
+ </header>
+ 
+ <main class="page">
+   <section class="page-hero section-inview">
+     <h1>Transparent, wallet-friendly pricing</h1>
+     <p>No surprises. Fair rates. Work that actually fixes the problem.</p>
+   </section>
+ 
+   <section class="pricing-cards section-inview">
+     <article class="price-card">
+       <h3>Diagnostics</h3>
+       <p class="price">$25</p>
+       <p>Applied to any repair you proceed with.</p>
+     </article>
+ 
+     <article class="price-card">
+       <h3>Repairs</h3>
+       <p class="price">$50+</p>
+       <p>Labour based on complexity. Parts at fair market cost.</p>
+     </article>
+ 
+@@ -46,29 +47,29 @@
+       <p class="price">$30+</p>
+       <p>Install & configure SSD, RAM, GPU, fans, BIOS updates, cleanup.</p>
+     </article>
+ 
+     <article class="price-card featured">
+       <h3>Custom PC Build</h3>
+       <p class="price">$100–$120</p>
+       <p>Assemble, cable-manage, install OS & drivers, stress-test.</p>
+     </article>
+ 
+     <article class="price-card">
+       <h3>Mobile Visit</h3>
+       <p class="price">$15–$35</p>
+       <p>Whitby & nearby. Exact cost depends on distance/time.</p>
+     </article>
+   </section>
+ 
+   <section class="cta section-inview">
+     <h2>Have a budget?</h2>
+     <p>I’ll propose the best parts or repair path for your price range.</p>
+     <a class="btn btn--primary" href="contact.html">Plan my build</a>
+   </section>
+ </main>
+ 
+ <footer class="footer">
+-  <p>© <span id="year"></span> Precision PC</p>
++  <p>© <span id="year"></span> Precision IT</p>
+ </footer>
+ </body>
+ </html>
+ 
+EOF
+)
