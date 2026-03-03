@@ -1,43 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Games — Precision PC</title>
-  <link rel="icon" href="images/favicon.ico"/>
-  <link rel="stylesheet" href="styles.css"/>
-  <script defer src="script.js"></script>
-</head>
-<body>
-<header class="navbar">
-  <a class="logo" href="index.html">Precision PC</a>
-  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleNav()">☰</button>
-  <nav id="site-nav" class="nav">
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="contact.html">Contact</a>
-    <a href="about.html">About</a>
-    <a href="settings.html">Settings</a>
-  </nav>
-</header>
-
-<main class="page">
-  <section class="page-hero section-inview">
-    <h1>Mini-Games</h1>
-    <p>Just for fun while you browse.</p>
-  </section>
-
-  <section class="game-picker section-inview">
-    <button class="btn btn--primary" onclick="loadFlappy()">Play Flappy</button>
-    <button class="btn btn--ghost" onclick="loadPlatform()">Play Platformer</button>
-  </section>
-
-  <section id="game-container" class="game-container section-inview" aria-live="polite"></section>
-</main>
-
-<footer class="footer">
-  <p>© <span id="year"></span> Precision PC</p>
-</footer>
-</body>
-</html>
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/games.html b/games.html
+index a555cdbe2a93a0cc4f94238b39211ba37180f527..7696e8713eedb117dc124f27832ed3f4a9d4c426 100644
+--- a/games.html
++++ b/games.html
+@@ -1,43 +1,44 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="utf-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+-  <title>Games — Precision PC</title>
++  <title>Games — Precision IT</title>
+   <link rel="icon" href="images/favicon.ico"/>
+   <link rel="stylesheet" href="styles.css"/>
+   <script defer src="script.js"></script>
+ </head>
+ <body>
+ <header class="navbar">
+-  <a class="logo" href="index.html">Precision PC</a>
++  <a class="logo" href="index.html">Precision IT</a>
+   <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleNav()">☰</button>
+   <nav id="site-nav" class="nav">
+     <a href="index.html">Home</a>
+     <a href="services.html">Services</a>
+     <a href="pricing.html">Pricing</a>
++    <a href="gaming-pcs.html">Plug & Play PCs</a>
+     <a href="contact.html">Contact</a>
+     <a href="about.html">About</a>
+     <a href="settings.html">Settings</a>
+   </nav>
+ </header>
+ 
+ <main class="page">
+   <section class="page-hero section-inview">
+     <h1>Mini-Games</h1>
+     <p>Just for fun while you browse.</p>
+   </section>
+ 
+   <section class="game-picker section-inview">
+     <button class="btn btn--primary" onclick="loadFlappy()">Play Flappy</button>
+     <button class="btn btn--ghost" onclick="loadPlatform()">Play Platformer</button>
+   </section>
+ 
+   <section id="game-container" class="game-container section-inview" aria-live="polite"></section>
+ </main>
+ 
+ <footer class="footer">
+-  <p>© <span id="year"></span> Precision PC</p>
++  <p>© <span id="year"></span> Precision IT</p>
+ </footer>
+ </body>
+ </html>
+ 
+EOF
+)
