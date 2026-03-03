@@ -1,9 +1,8 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
 diff --git a/script.js b/script.js
-index d866e5236c8764c883a1e4a165fe763c5e88117e..c8d726095d4b53b6ca1327ff626a28a4a3ec2b1b 100644
+index d866e5236c8764c883a1e4a165fe763c5e88117e..07b013d88677a6ab67c3ff5c6d890ba043a0342d 100644
 --- a/script.js
 +++ b/script.js
-@@ -1,201 +1,1043 @@
+@@ -1,201 +1,1067 @@
 -/* ====== helpers ====== */
 -const $ = (s, r=document) => r.querySelector(s);
 -const $$ = (s, r=document) => Array.from(r.querySelectorAll(s));
@@ -25,6 +24,7 @@ index d866e5236c8764c883a1e4a165fe763c5e88117e..c8d726095d4b53b6ca1327ff626a28a4
 +const STORAGE = {
 +  theme: 'pit_theme',
 +  accent: 'pit_accent',
++  motion: 'pit_motion',
 +  catalog: 'pit_catalog_v3',
 +  ownerSecurity: 'pit_owner_security_v2',
 +  adminSession: 'pit_admin_session_v2',
@@ -76,14 +76,14 @@ index d866e5236c8764c883a1e4a165fe763c5e88117e..c8d726095d4b53b6ca1327ff626a28a4
 +  if (theme === 'light') b.classList.add('theme-light');
 +  if (theme === 'auto') b.classList.add('theme-auto');
 +  localStorage.setItem(STORAGE.theme, theme);
++}
++
++function setTheme(theme) {
++  applyTheme(theme);
  }
 -function setTheme(theme){ applyTheme(theme); }
  
 -function setAccent(color){
-+function setTheme(theme) {
-+  applyTheme(theme);
-+}
-+
 +function setAccent(color) {
    document.documentElement.style.setProperty('--accent', color);
 -  localStorage.setItem(ACCENT_KEY, color);
@@ -106,13 +106,36 @@ index d866e5236c8764c883a1e4a165fe763c5e88117e..c8d726095d4b53b6ca1327ff626a28a4
 -  applyTheme(localStorage.getItem(THEME_KEY) || 'dark');
 -  const saved = localStorage.getItem(ACCENT_KEY);
 -  if(saved) document.documentElement.style.setProperty('--accent', saved);
-+function initThemeAndAccent() {
-+  applyTheme(localStorage.getItem(STORAGE.theme) || 'dark');
-+  const saved = localStorage.getItem(STORAGE.accent);
-+  if (saved) document.documentElement.style.setProperty('--accent', saved);
++
++function applyMotion(mode) {
++  document.body.classList.remove('force-reduced-motion');
++  if (mode === 'reduced') document.body.classList.add('force-reduced-motion');
++  localStorage.setItem(STORAGE.motion, mode);
++}
++
++function setMotion(mode) {
++  applyMotion(mode);
++}
++
++function resetSitePreferences() {
++  localStorage.removeItem(STORAGE.theme);
++  localStorage.removeItem(STORAGE.accent);
++  localStorage.removeItem(STORAGE.motion);
++  document.body.classList.remove('theme-light', 'theme-auto', 'force-reduced-motion');
++  document.documentElement.style.setProperty('--accent', '#2f6fff');
    const picker = $('#accentPicker');
 -  if(picker){ picker.value = saved || '#4f8cff'; picker.addEventListener('input', e => setAccent(e.target.value)); }
 -});
++  if (picker) picker.value = '#2f6fff';
++  alert('Website preferences reset.');
++}
++
++function initThemeAndAccent() {
++  applyTheme(localStorage.getItem(STORAGE.theme) || 'dark');
++  applyMotion(localStorage.getItem(STORAGE.motion) || 'smooth');
++  const saved = localStorage.getItem(STORAGE.accent);
++  if (saved) document.documentElement.style.setProperty('--accent', saved);
++  const picker = $('#accentPicker');
 +  if (!picker) return;
 +  picker.value = saved || '#2f6fff';
 +  picker.addEventListener('input', (e) => setAccent(e.target.value));
@@ -138,7 +161,23 @@ index d866e5236c8764c883a1e4a165fe763c5e88117e..c8d726095d4b53b6ca1327ff626a28a4
 +    nav.classList.remove('open');
 +    btn.setAttribute('aria-expanded', 'false');
 +  };
-+
+ 
+-/* ====== scroll reveal ====== */
+-(() => {
+-  const io = new IntersectionObserver((ents)=>{
+-    ents.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+-  }, {threshold:.18});
+-  $$('.section-inview').forEach(el=>io.observe(el));
+-})();
+-
+-/* ====== forms: contact + bug (mailto; email kept in JS only) ====== */
+-const CONTACT_TO = 'mrmattgardiner@gmail.com'; // test-only; not printed in HTML
+-const mailto = (sub, body) => `mailto:${CONTACT_TO}?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(body)}`;
+-
+-document.addEventListener('DOMContentLoaded', ()=>{
+-  const cf = $('#contactForm');
+-  if(cf){
+-    cf.addEventListener('submit', (e)=>{
 +  $$('#site-nav a').forEach((link) => link.addEventListener('click', close));
 +  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
 +  document.addEventListener('click', (e) => {
@@ -168,23 +207,7 @@ index d866e5236c8764c883a1e4a165fe763c5e88117e..c8d726095d4b53b6ca1327ff626a28a4
 +      observer.unobserve(entry.target);
 +    });
 +  }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
- 
--/* ====== scroll reveal ====== */
--(() => {
--  const io = new IntersectionObserver((ents)=>{
--    ents.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
--  }, {threshold:.18});
--  $$('.section-inview').forEach(el=>io.observe(el));
--})();
--
--/* ====== forms: contact + bug (mailto; email kept in JS only) ====== */
--const CONTACT_TO = 'mrmattgardiner@gmail.com'; // test-only; not printed in HTML
--const mailto = (sub, body) => `mailto:${CONTACT_TO}?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(body)}`;
--
--document.addEventListener('DOMContentLoaded', ()=>{
--  const cf = $('#contactForm');
--  if(cf){
--    cf.addEventListener('submit', (e)=>{
++
 +  sections.forEach((s) => observer.observe(s));
 +}
 +
@@ -748,7 +771,8 @@ index d866e5236c8764c883a1e4a165fe763c5e88117e..c8d726095d4b53b6ca1327ff626a28a4
 +    clearTimeout(APP.runtimeSessionTimer);
 +    APP.runtimeSessionTimer = null;
 +  }
-+
+ 
+-  const flap = ()=>{ if(over) return; bird.vy = -8.6; };
 +  const session = getAdminSession();
 +  if (!session) {
 +    clearAdminSession();
@@ -828,8 +852,7 @@ index d866e5236c8764c883a1e4a165fe763c5e88117e..c8d726095d4b53b6ca1327ff626a28a4
 +      }
 +      return;
 +    }
- 
--  const flap = ()=>{ if(over) return; bird.vy = -8.6; };
++
 +    const sec = getOwnerSecurity();
 +    const minutes = sec?.sessionMinutes || SECURITY_DEFAULTS.sessionMinutes;
 +    setAdminSession(minutes);
@@ -1063,10 +1086,10 @@ index d866e5236c8764c883a1e4a165fe763c5e88117e..c8d726095d4b53b6ca1327ff626a28a4
  
 -    if(bird.y > c.height - 8 || bird.y < 0) over = true;
 +    pipes = pipes.filter((p) => p.x + pipeW > 0);
-+
-+    if (bird.y > c.height - 8 || bird.y < 0) over = true;
  
 -    ctx.fillStyle = '#fff'; ctx.font = 'bold 22px system-ui';
++    if (bird.y > c.height - 8 || bird.y < 0) over = true;
++
 +    ctx.fillStyle = '#fff';
 +    ctx.font = 'bold 22px system-ui';
      ctx.fillText(`Score: ${score}`, 12, 28);
@@ -1182,6 +1205,3 @@ index d866e5236c8764c883a1e4a165fe763c5e88117e..c8d726095d4b53b6ca1327ff626a28a4
 +  initForms();
 +  initGamingPage();
 +});
- 
-EOF
-)
