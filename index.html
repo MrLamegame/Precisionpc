@@ -1,96 +1,156 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Precision PC — Whitby PC Repair, Upgrades & Custom Builds</title>
-  <meta name="description" content="Whitby-based PC repair, upgrades, diagnostics, and custom builds. Fast, affordable, mobile service available. 10+ years, 200+ clients." />
-  <meta property="og:title" content="Precision PC — Whitby PC Services">
-  <meta property="og:description" content="Do it right. Do it once. Repair, upgrades, diagnostics, custom builds.">
-  <meta property="og:type" content="website">
-  <link rel="icon" href="images/favicon.ico" />
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
-</head>
-<body>
-  <header class="navbar">
-    <a class="logo" href="index.html" aria-label="Precision PC Home">Precision PC</a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleNav()">☰</button>
-    <nav id="site-nav" class="nav">
-      <a href="index.html" class="active">Home</a>
-      <a href="services.html">Services</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="contact.html">Contact</a>
-      <a href="about.html">About</a>
-      <a href="settings.html">Settings</a>
-    </nav>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section class="hero section-inview">
-      <div class="hero__content">
-        <h1>Do it right. Do it once.</h1>
-        <p class="lead">Whitby’s local PC pro — diagnostics, repairs, upgrades & custom builds. Mobile service available (small extra). <strong>10+ years</strong>, <strong>200+ clients</strong>.</p>
-        <div class="hero__actions">
-          <a class="btn btn--primary" href="contact.html">Book a Service</a>
-          <a class="btn btn--ghost" href="pricing.html">See Pricing</a>
-        </div>
-      </div>
-      <div class="hero__media">
-        <img src="images/hero.jpg" alt="Clean PC setup with tower and monitor">
-      </div>
-    </section>
-
-    <!-- VALUE BADGES -->
-    <section class="badges section-inview">
-      <span class="badge">Same-Day Options</span>
-      <span class="badge">Honest Pricing</span>
-      <span class="badge">Mobile Visits</span>
-      <span class="badge">Budget Planning</span>
-    </section>
-
-    <!-- SERVICES PREVIEW -->
-    <section class="cards-grid section-inview">
-      <article class="card">
-        <img src="images/service-repair.png" alt="Repair icon">
-        <h3>Repairs</h3>
-        <p>Hardware & software fixes that stick — not band-aids.</p>
-        <a class="card-link" href="services.html#repairs">Learn more →</a>
-      </article>
-
-      <article class="card">
-        <img src="images/service-upgrade.png" alt="Upgrade icon">
-        <h3>Upgrades</h3>
-        <p>SSD, RAM, GPU, airflow — real gains for less.</p>
-        <a class="card-link" href="services.html#upgrades">Learn more →</a>
-      </article>
-
-      <article class="card">
-        <img src="images/service-build.png" alt="Build icon">
-        <h3>Custom Builds</h3>
-        <p>Build fee <strong>$100–$120</strong> — bench-tested & cable-managed.</p>
-        <a class="card-link" href="services.html#builds">Learn more →</a>
-      </article>
-
-      <article class="card">
-        <img src="images/service-support.png" alt="Support icon">
-        <h3>Support</h3>
-        <p>Remote help, cleanup, OS installs, backup & restore.</p>
-        <a class="card-link" href="services.html#support">Learn more →</a>
-      </article>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta section-inview">
-      <h2>Quick diagnosis?</h2>
-      <p>Flat <strong>$25</strong>. If you proceed with a repair, it goes toward the job.</p>
-      <a class="btn btn--primary" href="contact.html">Start Now</a>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>© <span id="year"></span> Precision PC — Whitby & area</p>
-  </footer>
-</body>
-</html>
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/index.html b/index.html
+index b1327eaef871c651934a5444d3b39472a99281d6..ae4dc5baaf1d14b800dcfdb89a43643c5cb3e863 100644
+--- a/index.html
++++ b/index.html
+@@ -1,96 +1,97 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+-  <title>Precision PC — Whitby PC Repair, Upgrades & Custom Builds</title>
+-  <meta name="description" content="Whitby-based PC repair, upgrades, diagnostics, and custom builds. Fast, affordable, mobile service available. 10+ years, 200+ clients." />
+-  <meta property="og:title" content="Precision PC — Whitby PC Services">
+-  <meta property="og:description" content="Do it right. Do it once. Repair, upgrades, diagnostics, custom builds.">
+-  <meta property="og:type" content="website">
++  <title>Precision IT — Diagnose, Repair, Plug & Play Computers</title>
++  <meta name="description" content="Professional PC diagnostics and repair services, plug-and-play gaming computers, and extra support services in Whitby and nearby areas." />
+   <link rel="icon" href="images/favicon.ico" />
+   <link rel="stylesheet" href="styles.css" />
+   <script defer src="script.js"></script>
+ </head>
+ <body>
++  <a class="skip-link" href="#main-content">Skip to main content</a>
++  <div class="topbar">Professional PC Service • Whitby & Surrounding Areas • Fast Response</div>
+   <header class="navbar">
+-    <a class="logo" href="index.html" aria-label="Precision PC Home">Precision PC</a>
++    <a class="logo" href="index.html">Precision IT</a>
+     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleNav()">☰</button>
+     <nav id="site-nav" class="nav">
+       <a href="index.html" class="active">Home</a>
+       <a href="services.html">Services</a>
+       <a href="pricing.html">Pricing</a>
++      <a href="gaming-pcs.html">Plug & Play PCs</a>
+       <a href="contact.html">Contact</a>
+       <a href="about.html">About</a>
+       <a href="settings.html">Settings</a>
+     </nav>
+   </header>
+ 
+-  <main>
+-    <!-- HERO -->
++  <main id="main-content">
+     <section class="hero section-inview">
+       <div class="hero__content">
+-        <h1>Do it right. Do it once.</h1>
+-        <p class="lead">Whitby’s local PC pro — diagnostics, repairs, upgrades & custom builds. Mobile service available (small extra). <strong>10+ years</strong>, <strong>200+ clients</strong>.</p>
++        <span class="hero__eyebrow">Modern, business-grade computer solutions</span>
++        <h1>Diagnose. Repair. Upgrade. Plug & Play.</h1>
++        <p class="lead">Built for real business growth: clean UX, fast access to services, and professional credibility for city-wide advertising traffic. Precision IT helps customers quickly find what they need and contact you instantly.</p>
++        <div class="hero__stats">
++          <span class="pill">10+ Years Experience</span>
++          <span class="pill">200+ Completed Jobs</span>
++          <span class="pill">Mobile + Desktop Optimized</span>
++        </div>
+         <div class="hero__actions">
+-          <a class="btn btn--primary" href="contact.html">Book a Service</a>
+-          <a class="btn btn--ghost" href="pricing.html">See Pricing</a>
++          <a class="btn btn--primary" href="contact.html">Contact Now</a>
++          <a class="btn btn--ghost" href="services.html">View Services</a>
+         </div>
+       </div>
+       <div class="hero__media">
+-        <img src="images/hero.jpg" alt="Clean PC setup with tower and monitor">
++        <img src="images/hero.jpg" alt="Professional PC service and gaming setup" loading="eager" decoding="async" fetchpriority="high" />
+       </div>
+     </section>
+ 
+-    <!-- VALUE BADGES -->
+-    <section class="badges section-inview">
+-      <span class="badge">Same-Day Options</span>
+-      <span class="badge">Honest Pricing</span>
+-      <span class="badge">Mobile Visits</span>
+-      <span class="badge">Budget Planning</span>
+-    </section>
++    <p class="image-placeholder section-inview">Replace <code>images/hero.jpg</code> with your primary brand hero image.</p>
+ 
+-    <!-- SERVICES PREVIEW -->
+-    <section class="cards-grid section-inview">
+-      <article class="card">
+-        <img src="images/service-repair.png" alt="Repair icon">
+-        <h3>Repairs</h3>
+-        <p>Hardware & software fixes that stick — not band-aids.</p>
+-        <a class="card-link" href="services.html#repairs">Learn more →</a>
+-      </article>
+ 
+-      <article class="card">
+-        <img src="images/service-upgrade.png" alt="Upgrade icon">
+-        <h3>Upgrades</h3>
+-        <p>SSD, RAM, GPU, airflow — real gains for less.</p>
+-        <a class="card-link" href="services.html#upgrades">Learn more →</a>
++    <section class="trust-rail section-inview" aria-label="Trust indicators">
++      <article><strong>Same-Day Diagnostics</strong><p>Priority slots for urgent downtime.</p></article>
++      <article><strong>Transparent Quotes</strong><p>Clear scope before any repair begins.</p></article>
++      <article><strong>Verified Burn-In Tests</strong><p>Systems tested before delivery.</p></article>
++      <article><strong>Local Reputation</strong><p>Trusted across Whitby and surrounding areas.</p></article>
++    </section>
++    <section id="categories" class="category-hub section-inview">
++      <article class="category-tile">
++        <h2>Plug & Play Computers</h2>
++        <p>Ready-to-use gaming desktops listed in a dedicated catalog with owner-managed inventory controls.</p>
++        <a class="btn btn--ghost" href="gaming-pcs.html">Open Catalog</a>
+       </article>
+-
+-      <article class="card">
+-        <img src="images/service-build.png" alt="Build icon">
+-        <h3>Custom Builds</h3>
+-        <p>Build fee <strong>$100–$120</strong> — bench-tested & cable-managed.</p>
+-        <a class="card-link" href="services.html#builds">Learn more →</a>
++      <article class="category-tile">
++        <h2>Diagnose & Repair</h2>
++        <p>Structured troubleshooting and repair flow for power, thermal, software, and hardware issues.</p>
++        <a class="btn btn--ghost" href="services.html#diagnose-repair">See Diagnose & Repair</a>
+       </article>
+-
+-      <article class="card">
+-        <img src="images/service-support.png" alt="Support icon">
+-        <h3>Support</h3>
+-        <p>Remote help, cleanup, OS installs, backup & restore.</p>
+-        <a class="card-link" href="services.html#support">Learn more →</a>
++      <article class="category-tile">
++        <h2>Extra Services</h2>
++        <p>Upgrades, setup, maintenance, cleanup, and optimization for both personal and business systems.</p>
++        <a class="btn btn--ghost" href="services.html#extras">See Extra Services</a>
+       </article>
+     </section>
+ 
+-    <!-- CTA -->
++    <section class="quick-contact section-inview">
++      <h2>Easy Contact, Fast Response</h2>
++      <div class="quick-contact__grid">
++        <a class="contact-chip" href="contact.html">Request Form</a>
++        <a class="contact-chip" href="mailto:mrmattgardiner@gmail.com">Email Direct</a>
++        <a class="contact-chip" href="services.html">Service Categories</a>
++      </div>
++    </section>
++
+     <section class="cta section-inview">
+-      <h2>Quick diagnosis?</h2>
+-      <p>Flat <strong>$25</strong>. If you proceed with a repair, it goes toward the job.</p>
+-      <a class="btn btn--primary" href="contact.html">Start Now</a>
++      <h2>Built for professional traffic and conversions</h2>
++      <p>Clean navigation, optimized responsive layout, and a direct service funnel that works from city ads to mobile users.</p>
++      <a class="btn btn--primary" href="contact.html">Book Your Service</a>
+     </section>
+   </main>
+ 
+   <footer class="footer">
+-    <p>© <span id="year"></span> Precision PC — Whitby & area</p>
++    <p>© <span id="year"></span> Precision IT — Whitby & area</p>
+   </footer>
+ </body>
+ </html>
+ 
+EOF
+)
