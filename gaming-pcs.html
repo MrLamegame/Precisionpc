@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plug & Play PCs — Precision IT</title>
+  <meta name="description" content="Browse plug-and-play gaming PCs from Precision IT. Owner-only secure admin controls for managing inventory listings." />
+  <link rel="icon" href="images/favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="index.html">Precision IT</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleNav()">☰</button>
+    <nav id="site-nav" class="nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="gaming-pcs.html" class="active">Plug & Play PCs</a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="page-hero section-inview">
+      <h1>Plug & Play Gaming Computers</h1>
+      <p>Ready-to-game systems listed with clear specs, pricing, and image previews. Inventory is managed from an owner-only admin console.</p>
+      <p class="image-placeholder">Add your category banner at <code>images/gaming-hero.jpg</code>.</p>
+    </section>
+
+    <section class="catalog-shell section-inview">
+      <div class="pc-meta">
+        <h2>Live Inventory</h2>
+        <span class="tag">Performance Tested</span>
+      </div>
+      <div class="catalog-toolbar">
+        <input id="catalogSearch" type="search" placeholder="Search by title, GPU, CPU, or keyword" aria-label="Search listings" />
+        <select id="catalogSort" aria-label="Sort listings">
+          <option value="newest">Newest</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="title">Title A–Z</option>
+        </select>
+        <select id="catalogFilterStock" aria-label="Filter by stock status">
+          <option value="all">All Stock</option>
+          <option value="In Stock">In Stock</option>
+          <option value="Limited">Limited</option>
+          <option value="Sold Out">Sold Out</option>
+        </select>
+      </div>
+      <div id="pcCatalog" class="catalog-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="admin-panel section-inview">
+      <div class="pc-meta">
+        <h2>Owner Admin Console</h2>
+        <span id="adminStatus" class="tag">Locked</span>
+      </div>
+      <p class="muted">Only the owner can unlock this section. Security includes salted passphrase hashing, session timeout, and lockout throttling.</p>
+
+      <div class="owner-auth-grid">
+        <form id="ownerSetupForm" class="form" autocomplete="off">
+          <h3>1) Secure owner setup (first time)</h3>
+          <div class="field">
+            <label for="ownerPassCreate">Create owner passphrase</label>
+            <input id="ownerPassCreate" type="password" minlength="12" required placeholder="Use a long passphrase" />
+          </div>
+          <div class="field">
+            <label for="ownerPassConfirm">Confirm passphrase</label>
+            <input id="ownerPassConfirm" type="password" minlength="12" required placeholder="Re-enter passphrase" />
+          </div>
+          <div class="field">
+            <label for="ownerSessionMinutes">Session timeout (minutes)</label>
+            <input id="ownerSessionMinutes" type="number" min="5" max="240" value="30" />
+          </div>
+          <div class="actions">
+            <button class="btn btn--ghost" type="submit">Save Owner Security</button>
+          </div>
+        </form>
+
+        <form id="ownerUnlockForm" class="form" autocomplete="off">
+          <h3>2) Unlock admin controls</h3>
+          <div class="field">
+            <label for="ownerPassUnlock">Owner passphrase</label>
+            <input id="ownerPassUnlock" type="password" required placeholder="Enter owner passphrase" />
+          </div>
+          <div class="actions">
+            <button class="btn btn--primary" type="submit">Unlock</button>
+            <button id="adminLockBtn" class="btn btn--ghost" type="button">Lock</button>
+          </div>
+          <p id="unlockHint" class="muted"></p>
+        </form>
+      </div>
+
+      <div id="adminTools" class="admin-tools" aria-hidden="true">
+        <div class="admin-utility-bar">
+          <button id="exportCatalogBtn" class="btn btn--ghost" type="button">Export Catalog JSON</button>
+          <label class="btn btn--ghost file-label" for="importCatalogInput">Import Catalog JSON</label>
+          <input id="importCatalogInput" type="file" accept="application/json" hidden />
+          <button id="removeSoldOutBtn" class="btn btn--ghost" type="button">Remove Sold Out</button>
+        </div>
+
+        <div class="admin-metrics" id="adminMetrics" aria-live="polite"></div>
+
+        <form id="pcForm" class="form" autocomplete="off">
+          <h3 id="listingFormTitle">Add New Listing</h3>
+          <input id="pcId" type="hidden" />
+          <div class="field">
+            <label for="pcTitle">Title</label>
+            <input id="pcTitle" required placeholder="e.g., Precision Apex RTX 4070 Super" />
+          </div>
+          <div class="field">
+            <label for="pcCaption">Caption</label>
+            <input id="pcCaption" required placeholder="e.g., 1440p Ultra / Streaming Ready" />
+          </div>
+          <div class="field two-col">
+            <div>
+              <label for="pcCategory">Category</label>
+              <select id="pcCategory">
+                <option value="Gaming">Gaming</option>
+                <option value="Workstation">Workstation</option>
+                <option value="Budget">Budget</option>
+                <option value="Creator">Creator</option>
+              </select>
+            </div>
+            <div>
+              <label for="pcWarranty">Warranty</label>
+              <input id="pcWarranty" placeholder="e.g., 6 months support" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="pcDescription">Description</label>
+            <textarea id="pcDescription" rows="4" required placeholder="CPU, GPU, RAM, SSD, cooling, case, and extras"></textarea>
+          </div>
+          <div class="field two-col">
+            <div>
+              <label for="pcPrice">Price</label>
+              <input id="pcPrice" required placeholder="e.g., $1,849 CAD" />
+            </div>
+            <div>
+              <label for="pcStock">Stock Status</label>
+              <select id="pcStock" required>
+                <option value="In Stock">In Stock</option>
+                <option value="Limited">Limited</option>
+                <option value="Sold Out">Sold Out</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="pcImage">Image upload</label>
+            <input id="pcImage" type="file" accept="image/*" />
+            <p class="muted">Upload listing photos directly here.</p>
+            <img id="pcImagePreview" class="image-preview" alt="Listing preview" hidden />
+          </div>
+          <div class="field two-col">
+            <div>
+              <label for="pcPublished">Visibility</label>
+              <select id="pcPublished">
+                <option value="true">Public</option>
+                <option value="false">Hidden</option>
+              </select>
+            </div>
+            <div>
+              <label for="pcFeatured">Featured</label>
+              <select id="pcFeatured">
+                <option value="false">Standard</option>
+                <option value="true">Featured</option>
+              </select>
+            </div>
+          </div>
+          <div class="actions">
+            <button id="listingSaveBtn" class="btn btn--primary" type="submit">Publish Listing</button>
+            <button id="listingResetBtn" class="btn btn--ghost" type="button">Reset</button>
+          </div>
+        </form>
+
+        <div class="admin-listings">
+          <h3>Manage Existing Listings</h3>
+          <div id="adminListingRows" class="admin-listing-rows"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Precision IT</p>
+  </footer>
+</body>
+</html>
