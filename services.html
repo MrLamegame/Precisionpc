@@ -1,64 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Services — Precision PC</title>
-  <link rel="icon" href="images/favicon.ico"/>
-  <link rel="stylesheet" href="styles.css"/>
-  <script defer src="script.js"></script>
-</head>
-<body>
-<header class="navbar">
-  <a class="logo" href="index.html">Precision PC</a>
-  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleNav()">☰</button>
-  <nav id="site-nav" class="nav">
-    <a href="index.html">Home</a>
-    <a href="services.html" class="active">Services</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="contact.html">Contact</a>
-    <a href="about.html">About</a>
-    <a href="settings.html">Settings</a>
-  </nav>
-</header>
-
-<main class="page">
-  <section class="page-hero section-inview">
-    <h1>Everything your PC needs</h1>
-    <p>From a simple cleanup to a full custom build — I’ve got you covered.</p>
-  </section>
-
-  <section class="service-sections">
-    <article id="repairs" class="service-block section-inview">
-      <h2>Repairs</h2>
-      <p>PSU, GPU, motherboard, Windows issues, data rescue — done with care, tested under load.</p>
-    </article>
-
-    <article id="upgrades" class="service-block section-inview">
-      <h2>Upgrades</h2>
-      <p>SSD swaps, RAM kits, GPU installs, airflow & thermal improvements that actually help.</p>
-    </article>
-
-    <article id="builds" class="service-block section-inview">
-      <h2>Custom Builds</h2>
-      <p>Performance matched to your games/apps — cable-managed and bench-tested.</p>
-    </article>
-
-    <article id="support" class="service-block section-inview">
-      <h2>Support & Setup</h2>
-      <p>Remote help, driver cleanup, backups, and OS reinstall with your apps restored.</p>
-    </article>
-  </section>
-
-  <section class="cta section-inview">
-    <h2>Not sure what to choose?</h2>
-    <p>Tell me your budget and what you do — I’ll propose the best plan.</p>
-    <a class="btn btn--primary" href="contact.html">Get a plan</a>
-  </section>
-</main>
-
-<footer class="footer">
-  <p>© <span id="year"></span> Precision PC</p>
-</footer>
-</body>
-</html>
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/services.html b/services.html
+index f89faa92906a6871ff61f2d8b4fe01960df0576c..1f2e1031a7c09620635592bb9425ced225a0e1b9 100644
+--- a/services.html
++++ b/services.html
+@@ -1,64 +1,79 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="utf-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+-  <title>Services — Precision PC</title>
++  <title>Services — Precision IT</title>
++  <meta name="description" content="Precision IT services: diagnostics and repair, plug-and-play gaming computers, and extra support services." />
+   <link rel="icon" href="images/favicon.ico"/>
+   <link rel="stylesheet" href="styles.css"/>
+   <script defer src="script.js"></script>
+ </head>
+ <body>
+ <header class="navbar">
+-  <a class="logo" href="index.html">Precision PC</a>
++  <a class="logo" href="index.html">Precision IT</a>
+   <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleNav()">☰</button>
+   <nav id="site-nav" class="nav">
+     <a href="index.html">Home</a>
+     <a href="services.html" class="active">Services</a>
+     <a href="pricing.html">Pricing</a>
++    <a href="gaming-pcs.html">Plug & Play PCs</a>
+     <a href="contact.html">Contact</a>
+     <a href="about.html">About</a>
+     <a href="settings.html">Settings</a>
+   </nav>
+ </header>
+ 
+ <main class="page">
+   <section class="page-hero section-inview">
+-    <h1>Everything your PC needs</h1>
+-    <p>From a simple cleanup to a full custom build — I’ve got you covered.</p>
++    <h1>Professional Service Categories</h1>
++    <p>Everything is organized into clear categories so customers can navigate quickly and book with confidence.</p>
++  </section>
++
++  <section class="service-tabs section-inview">
++    <a class="pill-link" href="#diagnose-repair">Diagnose & Repair</a>
++    <a class="pill-link" href="#plug-play">Plug & Play Computers</a>
++    <a class="pill-link" href="#extras">Extra Services</a>
+   </section>
+ 
+   <section class="service-sections">
+-    <article id="repairs" class="service-block section-inview">
+-      <h2>Repairs</h2>
+-      <p>PSU, GPU, motherboard, Windows issues, data rescue — done with care, tested under load.</p>
++    <article id="diagnose-repair" class="service-block section-inview">
++      <h2>Diagnose & Repair</h2>
++      <p>Comprehensive diagnostics for startup failures, random shutdowns, thermal throttling, blue screens, and component faults. Repairs are tested under load before handoff.</p>
+     </article>
+ 
+-    <article id="upgrades" class="service-block section-inview">
+-      <h2>Upgrades</h2>
+-      <p>SSD swaps, RAM kits, GPU installs, airflow & thermal improvements that actually help.</p>
++    <article id="plug-play" class="service-block section-inview">
++      <h2>Plug & Play Computers</h2>
++      <p>Ready-built gaming computers pre-configured for immediate use. Each system includes a clear listing with price, specs, and practical performance positioning.</p>
++      <a class="btn btn--ghost" href="gaming-pcs.html">Browse Plug & Play Catalog</a>
+     </article>
+ 
+-    <article id="builds" class="service-block section-inview">
+-      <h2>Custom Builds</h2>
+-      <p>Performance matched to your games/apps — cable-managed and bench-tested.</p>
++    <article id="extras" class="service-block section-inview">
++      <h2>Extra Services</h2>
++      <p>PC cleanup, Windows reinstall, backup migration, driver and BIOS updates, airflow optimization, cable management, and setup support.</p>
+     </article>
++  </section>
+ 
+-    <article id="support" class="service-block section-inview">
+-      <h2>Support & Setup</h2>
+-      <p>Remote help, driver cleanup, backups, and OS reinstall with your apps restored.</p>
+-    </article>
++
++  <section class="service-process section-inview">
++    <h2>How Service Works</h2>
++    <div class="process-grid">
++      <article><span>1</span><h3>Request</h3><p>Submit your issue, budget, and goals.</p></article>
++      <article><span>2</span><h3>Diagnosis</h3><p>We inspect, test, and identify root cause.</p></article>
++      <article><span>3</span><h3>Approval</h3><p>You receive a clear quote before work starts.</p></article>
++      <article><span>4</span><h3>Delivery</h3><p>Repair/build is verified and returned ready.</p></article>
++    </div>
+   </section>
+ 
+   <section class="cta section-inview">
+-    <h2>Not sure what to choose?</h2>
+-    <p>Tell me your budget and what you do — I’ll propose the best plan.</p>
+-    <a class="btn btn--primary" href="contact.html">Get a plan</a>
++    <h2>Need a recommendation?</h2>
++    <p>Tell us your issue or your goals and get a practical service plan.</p>
++    <a class="btn btn--primary" href="contact.html">Start a Request</a>
+   </section>
+ </main>
+ 
+ <footer class="footer">
+-  <p>© <span id="year"></span> Precision PC</p>
++  <p>© <span id="year"></span> Precision IT</p>
+ </footer>
+ </body>
+ </html>
+ 
+EOF
+)
