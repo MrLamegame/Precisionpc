@@ -1,7 +1,3 @@
-diff --git a/script.js b/script.js
-index d866e5236c8764c883a1e4a165fe763c5e88117e..07b013d88677a6ab67c3ff5c6d890ba043a0342d 100644
---- a/script.js
-+++ b/script.js
 @@ -1,201 +1,1067 @@
 -/* ====== helpers ====== */
 -const $ = (s, r=document) => r.querySelector(s);
